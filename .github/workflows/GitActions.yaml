@@ -41,7 +41,7 @@ jobs:
       
       - name: Update image tag in deployment.yaml
         run: |
-          sed -i 's|image: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-app:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-app:${{ github.sha }}|' projeto-cd/k8s/Deployment.yaml
+          sed -i "s|image: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-app:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-app:${{ github.sha }}|" projeto-cd/k8s/Deployment.yaml
 
       
       
