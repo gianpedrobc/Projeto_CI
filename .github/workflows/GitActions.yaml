@@ -44,7 +44,8 @@ jobs:
           sed -i 's|image: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-app:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-app:${{ github.sha }}|' projeto-cd/k8s/Deployment.yaml
 
       
-      - name: Commit and push changes
+      - name: Commit e push das mudanças
+        working-directory: projeto-cd
         run: |
           cd projeto-cd
           git config --global user.name 'github-actions[bot]'
