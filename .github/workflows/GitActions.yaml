@@ -38,25 +38,26 @@ jobs:
           path: projeto-cd 
 
       
-     
+      
       - name: Update image tag in deployment.yaml
         run: |
           sed -i 's|image: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-app:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-app:${{ github.sha }}|' projeto-cd/k8s/Deployment.yaml
 
       
-      - name: Commit e push das mudanças
-        working-directory: projeto-cd
+      
+      - name: Commit and push changes
         run: |
-          cd projeto-cd
+          cd projeto-cd 
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
+          
+          
           if ! git diff --quiet; then
-          echo "Mudanças detectadas. Commitando e fazendo push..."
+            echo "Mudanças detectadas. Commitando e fazendo push..."
             git add k8s/Deployment.yaml
             git commit -m "ci: Atualiza imagem para ${{ github.sha }}"
             git push
           else
-          echo "Nenhuma mudança na imagem para commitar."
+            echo "Nenhuma mudança na imagem para commitar."
           fi
 
