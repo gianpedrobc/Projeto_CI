@@ -1,24 +1,12 @@
-# Etapa 1: Usar uma imagem base oficial do Python.
-# A versão 'slim' é mais leve, contendo apenas o essencial para rodar a aplicação.
+
 FROM python:3.9-slim
 
-# Etapa 2: Definir o diretório de trabalho dentro do contêiner.
-# Todos os comandos a seguir serão executados a partir deste diretório.
 WORKDIR /code
 
-# Etapa 3: Instalar as dependências da aplicação.
-# O 'pip install "fastapi[standard]"' já inclui o uvicorn, que é o servidor.
 RUN pip install "fastapi[standard]"
 
-# Etapa 4: Copiar o código da sua aplicação para dentro do contêiner.
-# O './main.py' é a origem no seu PC, e '/code/' é o destino no contêiner.
 COPY ./main.py /code/
 
-# Etapa 5: Expor a porta que a aplicação irá escutar.
-# O Uvicorn, por padrão, rodará na porta 8000.
 EXPOSE 8000
 
-# Etapa 6: O comando para iniciar a aplicação quando o contêiner for executado.
-# CORREÇÃO: Usamos 'uvicorn' para servir a aplicação 'app' que está no arquivo 'main.py'.
-# O host '0.0.0.0' é essencial para que a aplicação seja acessível de fora do contêiner.
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
