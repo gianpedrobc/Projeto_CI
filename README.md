@@ -75,8 +75,7 @@ def read_root():
     return {"message": "teste CI/CD"}
 ```
 
-#### app/Dockerfile
-# Estágio 1: Base de produção
+# app/Dockerfile
 ```
 FROM python:3.9-slim
 
@@ -91,7 +90,7 @@ EXPOSE 8000
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
-#### .github/workflows/GitActions.yml
+# .github/workflows/GitActions.yml
 ```
 name: CI - build a image e atualiza o repository de CD
 
@@ -116,13 +115,13 @@ jobs:
 
 ```
 
-#### Configurar Credenciais e Secrets
+# Configurar Credenciais e Secrets
 
 # Personal Access Token (GitHub PAT)
 - Escopo: repo
 - Usado para o CI atualizar o projeto-cd
 
-#Docker Hub Token
+# Docker Hub Token
 - Permissões: Read & Write
 - Usado para push de imagens
 
@@ -140,25 +139,25 @@ jobs:
 No seu terminal, vá para a pasta projeto-ci, adicione os arquivos e faça o push:
 ```
 git add .
-git commit -m "feat: Adiciona aplicação FastAPI e workflow de CI"
+git commit -m "Adiciona aplicação FastAPI e workflow de CI"
 git push origin main
 ```
 
 Faça o mesmo para o projeto-cd (com os arquivos YAML):
 ```
 git add .
-git commit -m "feat: Adiciona manifestos iniciais do Kubernetes"
+git commit -m "Adiciona manifestos iniciais do Kubernetes"
 git push origin main
 ```
 ## Configurar o Ambiente Local (Kubernetes e ArgoCD)
 
-1. Iniciar o Kubernetes:
+# Iniciar o Kubernetes:
 
 Abra o Rancher Desktop e garanta que o Kubernetes esteja rodando.
 
 Verifique a conexão: `kubectl get nodes` (deve mostrar rancher-desktop).
 
-2. Instalar o ArgoCD:
+# Instalar o ArgoCD:
 
 Crie o namespace dedicado:
 
@@ -168,14 +167,15 @@ Crie o namespace dedicado:
 
 Aplique o manifesto de instalação oficial:
 
+```
+ kubectl apply -n argocd -f [https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml](https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml)
 
-``` kubectl apply -n argocd -f [https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml](https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml)
 ```
 
 Aguarde os pods iniciarem: `kubectl get pods -n argocd -w`
 
 
-## — Acessar o painel web do ArgoCD
+## Acessar o painel web do ArgoCD
 
 ### Porta-forward 
 
@@ -259,10 +259,11 @@ O ArgoCD irá clonar o projeto-cd, ler a pasta k8s e aplicar os manifestos. O ca
 
 No seu terminal, verifique se os pods estão rodando:
 
-kubectl get pods
-# Você deve ver 2 pods 'fastapi-deployment-...' em estado 'Running'
+`kubectl get pods`
+
+ Você deve ver 2 pods 'fastapi-deployment-...' em estado 'Running'
 
 
-Acesse sua aplicação no navegador: http://localhost:30007
+Acesse sua aplicação no navegador: `http://localhost:30007`
 
 [![Clique para assistir](midia/20251022153116.mp4)](midia/20251022153116.mp4)
