@@ -264,7 +264,12 @@ No seu terminal, verifique se os pods estão rodando:
  Você deve ver 2 pods 'fastapi-deployment-...' em estado 'Running'
 
 
-Acesse sua aplicação no navegador: `http://localhost:30007`
+---
+
+## 🎥 Demonstração em Vídeo
+
+Veja o funcionamento completo do pipeline CI/CD automatizado com GitHub Actions, Docker Hub e ArgoCD:
 
 [![Assista no YouTube](https://img.youtube.com/vi/92X2tRUg6Qk/0.jpg)](https://www.youtube.com/watch?v=92X2tRUg6Qk)
+
 
