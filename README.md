@@ -21,6 +21,13 @@ Para seguir as melhores práticas de GitOps, utilizamos dois repositórios:
 - Contém os manifestos YAML do Kubernetes (Fonte Única da Verdade).
 - CD: ArgoCD monitora continuamente este repositório e sincroniza automaticamente o cluster Kubernetes.
 
+## 🔗 Repositórios Relacionados
+
+- **Repositório da Aplicação (CD)**: [https://github.com/gianpedrobc/Projeto_CD](https://github.com/gianpedrobc/Projeto_CD)
+
+- **Repositório do DockerHub**: [https://hub.docker.com/repository/docker/gianpedro/fastapi-app/general](https://hub.docker.com/repository/docker/gianpedro/fastapi-app/general)
+
+
 ### Tecnologias Utilizadas
 - **CI**: GitHub Actions  
 - **Registro de Imagem**: Docker Hub  
@@ -210,7 +217,7 @@ Login no ArgoCD:
 * Senha: (saída do comando acima)
 
 <p align="center">
-  <img src="midia/Captura de Tela (84).png" alt="Foto da página admin ArgoCD" width="700">
+  <img src="midia/CapturadeTela(84).png" alt="Foto da página admin ArgoCD" width="700">
 </p>
 
 
@@ -236,19 +243,19 @@ Login no ArgoCD:
 <h3 align="center">Configuração do ArgoCD</h3>
 
 <p align="center">
-  <img src="midia/argocd 1.jpg" alt="Configuração da ArgoCD - Etapa 1" width="700">
+  <img src="midia/argocd1.jpg" alt="Configuração da ArgoCD - Etapa 1" width="700">
 </p>
 <p align="center">
-  <img src="midia/argocd 2.jpg" alt="Configuração da ArgoCD - Etapa 2" width="700">
+  <img src="midia/argocd2.jpg" alt="Configuração da ArgoCD - Etapa 2" width="700">
 </p>
 <p align="center">
-  <img src="midia/argocd 3.jpg" alt="Configuração da ArgoCD - Etapa 3" width="700">
+  <img src="midia/argocd3.jpg" alt="Configuração da ArgoCD - Etapa 3" width="700">
 </p>
 <p align="center">
-  <img src="midia/argocd 4.jpg" alt="Configuração da ArgoCD - Etapa 4" width="700">
+  <img src="midia/argocd4.jpg" alt="Configuração da ArgoCD - Etapa 4" width="700">
 </p>
 <p align="center">
-  <img src="midia/argocd 5.jpg" alt="Configuração da ArgoCD - Etapa 5" width="700">
+  <img src="midia/argocd5.jpg" alt="Configuração da ArgoCD - Etapa 5" width="700">
 </p>
 
 
