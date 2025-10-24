@@ -266,4 +266,5 @@ No seu terminal, verifique se os pods estão rodando:
 
 Acesse sua aplicação no navegador: `http://localhost:30007`
 
-[![Clique para assistir](midia/20251022153116.mp4)](midia/20251022153116.mp4)
+[![Assista no YouTube](https://img.youtube.com/vi/92X2tRUg6Qk/0.jpg)](https://www.youtube.com/watch?v=92X2tRUg6Qk)
+
