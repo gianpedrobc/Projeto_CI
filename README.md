@@ -138,7 +138,7 @@ jobs:
 - PAT_TOKEN
 
 <p align="center">
-  <img src="midia/secret.png" alt="Secrets" width="700">
+  <img src="midia/secret.jpg" alt="Secrets" width="700">
 </p>
 
 ## Enviar o Código Inicial
