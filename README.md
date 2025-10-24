@@ -270,6 +270,13 @@ No seu terminal, verifique se os pods estão rodando:
 
  Você deve ver 2 pods 'fastapi-deployment-...' em estado 'Running'
 
+# Para ver a sua aplicação FastAPI (a que foi implantada):
+
+O endereço é `http://localhost:30007`
+
+# Para ver a interface do ArgoCD:
+
+O endereço é `https://localhost:8080`
 
 ---
 
